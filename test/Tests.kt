@@ -1,5 +1,4 @@
 import org.junit.Test
-import java.util.*
 import kotlin.test.assertEquals
 
 class Tests {
@@ -38,17 +37,5 @@ class Tests {
         assertEquals(findTheLargestSubArray(inList8), outList8)
         assertEquals(findTheLargestSubArray(inList9), outList9)
         assertEquals(findTheLargestSubArray(inList10), outList10)
-    }
-
-
-    @Test
-    fun big() {
-        var list = mutableListOf<Int>()
-        val r = Random()
-        for (i in 0..100_000_000) {
-            list.add((Math.pow(-1.0, r.nextInt().toDouble() % 10) * r.nextInt() % 100).toInt())
-        }
-
-        print(findTheLargestSubArray(list).size)
     }
 }

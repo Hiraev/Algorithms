@@ -1,18 +1,17 @@
 import org.junit.Test
-import kotlin.test.assertEquals
+import org.junit.Assert.*
 
 class Tests {
-
     val inList1 = listOf(1, 4, 24, 54, -100, 39, 84, 92, 12)
     val outList1 = listOf(39, 84, 92, 12)
     val inList2 = listOf(1, 4, 24, 54, 100, 39, 84, 92, 12)
     val outList2 = listOf(1, 4, 24, 54, 100, 39, 84, 92, 12)
     val inList3 = listOf(9, -12, 23, 4, 0, -9)
-    val outList3 = listOf(23, 4, 0)
+    val outList3 = listOf(23, 4)
     val inList4 = listOf(-9, -12, 23, 4, 0, -9, 34, 43, 0, 92, -92, 92)
-    val outList4 = listOf(23, 4, 0, -9, 34, 43, 0, 92, -92, 92)
+    val outList4 = listOf(23, 4, 0, -9, 34, 43, 0, 92)
     val inList5 = listOf(-5, 5, -4, 4)
-    val outList5 = listOf(5, -4, 4)
+    val outList5 = listOf(5)
     val inList6 = listOf<Int>()
     val outList6 = listOf<Int>()
     val inList7 = listOf(-1, -2, -3, 7, -4, -5, -6)
@@ -22,8 +21,11 @@ class Tests {
     val inList9 = listOf(8, -90, 76, 98, 56, 1, 2, -3, 2, 43, 91, -234, 23, 134, 22, 33, -123, 90)
     val outList9 = listOf(76, 98, 56, 1, 2, -3, 2, 43, 91)
 
-    var inList10 = listOf(-1,-2,-3)
-    var outList10 = listOf(-1)
+    var inList10 = listOf(-1, -2, -3)
+    var outList10 = emptyList<Int>()
+
+    var inList11 = listOf(Int.MAX_VALUE, Int.MAX_VALUE, -3)
+    var outList11 = listOf(Int.MAX_VALUE, Int.MAX_VALUE)
 
     @Test
     fun findTheLargestSubArray() {
@@ -37,5 +39,6 @@ class Tests {
         assertEquals(findTheLargestSubArray(inList8), outList8)
         assertEquals(findTheLargestSubArray(inList9), outList9)
         assertEquals(findTheLargestSubArray(inList10), outList10)
+        assertEquals(findTheLargestSubArray(inList11), outList11)
     }
 }
